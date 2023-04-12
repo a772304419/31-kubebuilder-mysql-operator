@@ -1,0 +1,14 @@
+apiVersion: batch.mysql.zxl.com/v1
+kind: Mysql
+metadata:
+  labels:
+    app.kubernetes.io/name: mysql
+    app.kubernetes.io/instance: mysql-sample
+    app.kubernetes.io/part-of: 31-kubebuilder-mysql-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: 31-kubebuilder-mysql-operator
+  name: mysql-sample
+spec:
+  replicas: 1
+  image: flyer103/mysql:5.7
+  command: [ "/bin/bash", "-ce", "tail -f /dev/null" ]

@@ -1,0 +1,31 @@
+# permissions for end users to edit mysqls.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: mysql-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: 31-kubebuilder-mysql-operator
+    app.kubernetes.io/part-of: 31-kubebuilder-mysql-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: mysql-editor-role
+rules:
+- apiGroups:
+  - batch.mysql.zxl.com
+  resources:
+  - mysqls
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - batch.mysql.zxl.com
+  resources:
+  - mysqls/status
+  verbs:
+  - get
