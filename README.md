@@ -1,3 +1,6 @@
+# kubebuilder项目初始化命令
+./start.sh
+
 # 31-kubebuilder-mysql-operator
 // TODO(user): Add simple overview of use/purpose
 
